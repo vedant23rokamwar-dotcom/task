@@ -44,3 +44,4 @@ public:
     void updateBranch(const std::string& name, const std::string& commitId);
 };
 
+#endif
