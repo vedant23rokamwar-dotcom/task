@@ -1,4 +1,4 @@
 obj/
 __pycache__/
 .vcs/
-vcs
+*.exe
