@@ -12,6 +12,8 @@
 #include <sstream>
 #include <set>
 #include <algorithm>
+#include <sstream>
+#include <iomanip>
 
 namespace fs = std::filesystem;
 
@@ -62,7 +64,12 @@ static std::string now() {
 // Reformat stored timestamp "YYYY-MM-DD HH:MM:SS" → "DD-MM-YYYY HH:MM"
 static std::string formatDate(const std::string& ts) {
     struct tm tm_parsed = {};
-    if (strptime(ts.c_str(), "%Y-%m-%d %H:%M:%S", &tm_parsed)) {
+    std::istringstream ss(ts);
+ss >> std::get_time(&tm_parsed, "%Y-%m-%d %H:%M:%S");
+
+if (!ss.fail()) {
+    // Parsing succeeded, execute your code here
+
         char buf[32];
         strftime(buf, sizeof(buf), "%d-%m-%Y %H:%M", &tm_parsed);
         return buf;
