@@ -1,6 +1,7 @@
 #ifndef BRANCH_MANAGER_H
 #define BRANCH_MANAGER_H
 
+#include<vector>
 #include <string>
 #include <vector>
 
