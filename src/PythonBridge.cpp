@@ -89,7 +89,7 @@ std::string PythonBridge::toJson(const RepoData& data) {
                 first = false;
             }
         }
-        i << "}\n";
+        j << "}\n";
         j << "    }";
         if (i + 1 < data.commits.size()) j << ",";
         j << "\n";
